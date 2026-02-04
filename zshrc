@@ -131,6 +131,7 @@ source ~/.local/share/zsh-plugins/zsh-history-substring-search/zsh-history-subst
 source ~/.local/share/zsh-plugins/wakatime-zsh/wakatime.plugin.zsh
 fpath=(~/.local/share/zsh-plugins/zsh-completions/src $fpath)
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(tirith init)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
