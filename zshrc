@@ -34,10 +34,9 @@ export PATH="$HOME/.local/share/nvim/mason/packages:/opt/homebrew/bin:$HOME/.com
 #export GOPATH="$HOME/projects/go"
 
 # History Configuration
-export HISTSIZE=1000000
-export HISTFILE="$HOME/.config/zsh/zsh_history"
-export LESSHISTFILE="-" #LESSHISTFILE='/dev/null'
-export SAVEHIST=1000000
+export HISTSIZE=999999
+export SAVEHIST=999999
+export HISTFILE="$HOME/.local/state/zsh/zsh_history"
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
@@ -47,6 +46,7 @@ alias history="history 0"     # force zsh to show the complete history
 
 # Other program settings:
 export LESS=-R
+export LESSHISTFILE="-" #='/dev/null'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" #MANPAGER="nvim -c 'set ft=man' -"
 export FZF_DEFAULT_OPTS="
   --layout=reverse --height 40% --border
@@ -77,8 +77,9 @@ alias\
   artisan='php artisan'\
   tinker='artisan tinker'\
   wget='wget --hsts-file /dev/null'\
-  rm='echo "This is not the command you are looking for."; false'\
-  tm='tmux a'\
+  tm='tmux'\
+  tma='tm attach'\
+  tms='tmux-sessionizer'\
   t='tm'\
   pest='vendor/bin/pest'\
   p="pest"\
