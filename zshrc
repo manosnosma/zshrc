@@ -11,14 +11,11 @@ fi
 # Global Vars
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="ghostty"
-export TERM="xterm-ghostty"
 export BROWSER="brave"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-
-#export PATH="$GOPATH:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin/scripts:$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/share/nvim/mason/packages:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin/scripts:$HOME/.local/bin:$PATH"
+# export TERMINAL="ghostty"
+# export TERM="xterm-ghostty"
 
 # ~/ Home Dir Clean-up
 #export XDG_DATA_HOME="$HOME/Library"
@@ -32,6 +29,7 @@ export PATH="$HOME/.local/share/nvim/mason/packages:/opt/homebrew/bin:$HOME/.com
 #export ZDOTDIR="$HOME/.config/zsh"
 #export JAVA_HOME=$(/usr/bin/java)
 #export GOPATH="$HOME/projects/go"
+#export PATH="$GOPATH:/opt/homebrew/bin:$HOME/.composer/vendor/bin:$HOME/.local/bin/scripts:$HOME/.local/bin:$PATH"
 
 # History Configuration
 export HISTSIZE=999999
@@ -68,7 +66,7 @@ setopt vi                    # vi mode
 alias\
   g='git'\
   la='eza -al'\
-  lg='lazygit'\
+  lg='gitui'\
   ls='eza --group-directories-first'\
   l='ls'\
   vim='nvim'\
@@ -84,14 +82,8 @@ alias\
   pest='vendor/bin/pest'\
   p="pest"\
   files="yazi"\
-  f="files"
-
-# alias -g\
-#   a="add"\
-#   aa="add ."\
-#   c="commit"\
-#   p="push"\
-#   s="status"
+  f="files"\
+  rm="trash"
 
 # Helper Funcs
 a_tar           () { tar -cf $1 $2                                 }
@@ -130,9 +122,13 @@ source ~/.local/share/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.local/share/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.local/share/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.local/share/zsh-plugins/wakatime-zsh/wakatime.plugin.zsh
+source $HOMEBREW_PREFIX/share/zsh/site-functions
+source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 fpath=(~/.local/share/zsh-plugins/zsh-completions/src $fpath)
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(tirith init)"
+eval "$(mise activate zsh)"
+# eval "$(tirith init)"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
