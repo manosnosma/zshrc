@@ -1,5 +1,5 @@
 # ConZoomerShellConfig
-## 2026-01-31
+## 2026-05-05
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -14,8 +14,8 @@ export VISUAL="nvim"
 export BROWSER="brave"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-# export TERMINAL="ghostty"
-# export TERM="xterm-ghostty"
+export TERMINAL="ghostty"
+export TERM="xterm-ghostty"
 
 # ~/ Home Dir Clean-up
 #export XDG_DATA_HOME="$HOME/Library"
@@ -70,20 +70,23 @@ alias\
   ls='eza --group-directories-first'\
   l='ls'\
   vim='nvim'\
+  vi='vim'\
   v='vim'\
   vimdiff='v -d'\
   artisan='php artisan'\
   tinker='artisan tinker'\
   wget='wget --hsts-file /dev/null'\
   tm='tmux'\
-  tma='tm attach'\
+  tma='tmux attach'\
   tms='tmux-sessionizer'\
-  t='tm'\
   pest='vendor/bin/pest'\
   p="pest"\
   files="yazi"\
   f="files"\
   rm="trash"
+
+# Keybinds
+bindkey -s '^f' 'tms\n'
 
 # Helper Funcs
 a_tar           () { tar -cf $1 $2                                 }
@@ -127,8 +130,8 @@ source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 fpath=(~/.local/share/zsh-plugins/zsh-completions/src $fpath)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(mise activate zsh)"
+eval "$(but completions zsh)"
 # eval "$(tirith init)"
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
