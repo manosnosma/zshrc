@@ -66,7 +66,7 @@ setopt vi                    # vi mode
 alias\
   g='git'\
   la='eza -al'\
-  lg='gitui'\
+  lg='lazygit'\
   ls='eza --group-directories-first'\
   l='ls'\
   vim='nvim'\
@@ -83,7 +83,8 @@ alias\
   p="pest"\
   files="yazi"\
   f="files"\
-  rm="trash"
+  rm="trash"\
+  commit-msg="claude -p 'give me a single line git commit message please'"
 
 # Keybinds
 bindkey -s '^f' 'tms\n'
