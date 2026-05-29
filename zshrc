@@ -64,27 +64,28 @@ setopt vi                    # vi mode
 
 # Aliases
 alias\
+  artisan='php artisan'\
+  brew-ui='taproom'\
+  commit-msg="agent --yolo -p 'Can you give me a single-line git commit message for the changes here please?'"\
+  f="files"\
+  files="yazi"\
   g='git'\
+  l='ls'\
   la='eza -al'\
   lg='lazygit'\
   ls='eza --group-directories-first'\
-  l='ls'\
-  vim='nvim'\
-  vi='vim'\
-  v='vim'\
-  vimdiff='v -d'\
-  artisan='php artisan'\
+  p="pest"\
+  pest='vendor/bin/pest'\
+  rm="trash"\
   tinker='artisan tinker'\
-  wget='wget --hsts-file /dev/null'\
   tm='tmux'\
   tma='tmux attach'\
   tms='tmux-sessionizer'\
-  pest='vendor/bin/pest'\
-  p="pest"\
-  files="yazi"\
-  f="files"\
-  rm="trash"\
-  commit-msg="agent -p 'Can you give me a single-line git commit message for the changes here please?'"
+  v='vim'\
+  vi='vim'\
+  vim='nvim'\
+  vimdiff='v -d'\
+  wget='wget --hsts-file /dev/null'
 
 # Keybinds
 bindkey -s '^f' 'tms\n'
