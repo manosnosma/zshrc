@@ -84,7 +84,7 @@ alias\
   files="yazi"\
   f="files"\
   rm="trash"\
-  commit-msg="claude -p 'give me a single line git commit message please'"
+  commit-msg="agent -p 'Can you give me a single-line git commit message for the changes here please?'"
 
 # Keybinds
 bindkey -s '^f' 'tms\n'
